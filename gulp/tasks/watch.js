@@ -6,9 +6,8 @@
 var gulp  = require('gulp');
 var config= require('../config');
 
+
 gulp.task('watch', ['setWatch', 'browserSync'], function() {
-  gulp.watch(config.markup.src, ['markup']);
-  gulp.watch(config.partials.src, ['partials']);
+  gulp.watch(config.templates.src, ['templates']);
   gulp.watch(config.sass.src, ['sass']);
-  gulp.watch(config.test.karma, ['test']);
 });

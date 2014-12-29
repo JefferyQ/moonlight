@@ -1,9 +1,10 @@
 var gulp = require('gulp');
 
+
 gulp.task('dist', [
   'browserify',
   'sass',
   'icons',
-  'partials',
+  'templates',
   'vendors'
 ]);
