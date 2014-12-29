@@ -20,7 +20,9 @@ gulp.task('templates', function () {
   var opts = {
     defaults: {
       cache: false,
-      locals: {}
+      locals: {
+        nav: require('../../src/templates/_nav.json')
+      }
     }
   }
   return gulp.src(config.src, {base: config.path})

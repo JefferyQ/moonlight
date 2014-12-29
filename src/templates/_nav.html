@@ -1,1 +1,8 @@
 <div>NAV</div>
+{% if nav %}<ul>{% endif %}
+{% for item in nav %}
+  <li>
+    {{ loop.index }}. <a href="{{ item.url }}">{{ item.name }}</a>
+  </li>
+{% endfor %}
+{% if nav %}</ul>{% endif %}
