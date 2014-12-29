@@ -1,11 +1,25 @@
 var distMode = (process.argv.slice(2).indexOf('--dist')>=0);
 var dest = distMode ? "./dist" : "./build";
+var assetsDest = dest + "/assets";
 var src = './src';
-var demoSrc = './demos';
+var sassPath = src + "/sass";
+var templatesPath = src + "/templates";
+
 
 module.exports = {
   buildMode: {
     dist: distMode
+  },
+  browserify: {
+    // Enable source maps
+    debug: true,
+    // A separate bundle will be generated for each
+    // bundle config in the list below
+    bundleConfigs: [{
+      entries: src + '/js/module.js',
+      dest: assetsDest + "/js",
+      outputName: 'moonlight.js'
+    }]
   },
   browserSync: {
     server: {
@@ -23,13 +37,26 @@ module.exports = {
       './node_modules/font-awesome/fonts/*',
       './node_modules/bootstrap-sass/assets/fonts/bootstrap/*'
     ],
-    dest: dest + '/fonts'
+    dest: assetsDest + '/fonts'
   },
-  markup: {
+  sass: {
+    path: sassPath,
     src: [
-      demoSrc + "/*/*"
+      sassPath + "/**/*.scss"
     ],
-    base: './demos',
+    outputName: 'moonlight.css',
+    dest: assetsDest
+  },
+  templates: {
+    path: templatesPath,
+    src: [
+      templatesPath + "/**/*.html",
+      "!" + templatesPath + "/**/_*.html",
+    ],
     dest: dest
+  },
+  vendors: {
+    outputName: 'moonlight-vendors.js',
+    dest: assetsDest
   }
 };
