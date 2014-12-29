@@ -7,13 +7,13 @@ var handleErrors = require('../util/handleErrors');
 var config = require('../config').sass;
 
 gulp.task('sass', function() {
-    gulp.src(config.src)
-        .pipe(sourcemaps.init())
-        .pipe(sass()
-            .on('error', handleErrors)
-        )
-        .pipe(concat(config.outputName))
-        .pipe(minify())
-        .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest(config.dest));
+  gulp.src(config.src)
+    .pipe(sourcemaps.init())
+    .pipe(sass()
+      .on('error', handleErrors)
+    )
+    .pipe(concat(config.outputName))
+    .pipe(minify())
+    .pipe(sourcemaps.write('./maps'))
+    .pipe(gulp.dest(config.dest));
 });
