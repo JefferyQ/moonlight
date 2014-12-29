@@ -17,10 +17,15 @@ var getJsonData = function(file) {
 
 
 gulp.task('templates', function () {
-  console.log('build templates');
+  var opts = {
+    defaults: {
+      cache: false,
+      locals: {}
+    }
+  }
   return gulp.src(config.src, {base: config.path})
     .pipe(data(getJsonData))
-    .pipe(swig())
+    .pipe(swig(opts))
     .pipe(prettify({indent_size: 2}))
     .pipe(gulp.dest(config.dest));
 });
