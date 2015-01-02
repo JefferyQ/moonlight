@@ -45,7 +45,7 @@ module.exports = {
       sassPath + "/**/*.scss"
     ],
     outputName: 'moonlight.css',
-    dest: assetsDest
+    dest: assetsDest + "/css"
   },
   templates: {
     path: templatesPath,
