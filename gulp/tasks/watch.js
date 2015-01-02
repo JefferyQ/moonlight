@@ -3,8 +3,10 @@
    - gulp/tasks/browserSync.js watches and reloads compiled files
 */
 
-var gulp  = require('gulp');
-var config= require('../config');
+var
+  gulp  = require('gulp'),
+  config= require('../config')
+  ;
 
 
 gulp.task('watch', ['setWatch', 'browserSync'], function() {

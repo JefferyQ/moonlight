@@ -1,5 +1,7 @@
-var gulp = require('gulp');
-var config = require('../config').icons;
+var
+  gulp = require('gulp'),
+  config = require('../config').icons
+  ;
 
 
 gulp.task('icons', function () {

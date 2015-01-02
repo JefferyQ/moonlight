@@ -1,11 +1,13 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var sourcemaps = require('gulp-sourcemaps');
-var uglify = require('gulp-uglify');
-var config = require('../config').vendors;
-var buildMode = require('../config').buildMode;
-var dist = require('../config').dist;
-var PACKAGE = require('../../package.json');
+var
+  gulp = require('gulp'),
+  concat = require('gulp-concat'),
+  sourcemaps = require('gulp-sourcemaps'),
+  uglify = require('gulp-uglify'),
+  config = require('../config').vendors,
+  buildMode = require('../config').buildMode,
+  dist = require('../config').dist,
+  PACKAGE = require('../../package.json')
+  ;
 
 
 var src = [];
@@ -21,6 +23,6 @@ gulp.task('vendors', function() {
     .pipe(sourcemaps.init())
     .pipe(concat(config.outputName))
     .pipe(uglify())
-    .pipe(sourcemaps.write('./maps'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(config.dest))
 });

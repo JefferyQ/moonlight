@@ -1,9 +1,11 @@
-var distMode = (process.argv.slice(2).indexOf('--dist')>=0);
-var dest = distMode ? "./dist" : "./build";
-var assetsDest = dest + "/assets";
-var src = './src';
-var sassPath = src + "/sass";
-var templatesPath = src + "/templates";
+var
+  distMode = (process.argv.slice(2).indexOf('--dist')>=0),
+  dest = distMode ? './dist' : './build',
+  assetsDest = dest + '/assets',
+  src = './src',
+  sassPath = src + '/sass',
+  templatesPath = src + '/templates'
+  ;
 
 
 module.exports = {
@@ -17,7 +19,7 @@ module.exports = {
     // bundle config in the list below
     bundleConfigs: [{
       entries: src + '/js/module.js',
-      dest: assetsDest + "/js",
+      dest: assetsDest + '/js',
       outputName: 'moonlight.js'
     }]
   },
@@ -27,9 +29,9 @@ module.exports = {
       directory: true
     },
     files: [
-      dest + "/**",
+      dest + '/**',
       // Exclude Map files
-      "!" + dest + "/**.map"
+      '!' + dest + '/**.map'
     ]
   },
   icons: {
@@ -42,16 +44,16 @@ module.exports = {
   sass: {
     path: sassPath,
     src: [
-      sassPath + "/**/*.scss"
+      sassPath + '/**/*.scss'
     ],
     outputName: 'moonlight.css',
-    dest: assetsDest + "/css"
+    dest: assetsDest + '/css'
   },
   templates: {
     path: templatesPath,
     src: [
-      templatesPath + "/**/*.html",
-      "!" + templatesPath + "/**/_*.html",
+      templatesPath + '/**/*.html',
+      '!' + templatesPath + '/**/_*.html',
     ],
     dest: dest
   },

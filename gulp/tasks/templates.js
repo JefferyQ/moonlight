@@ -1,8 +1,10 @@
-var gulp = require('gulp');
-var swig = require('gulp-swig');
-var data = require('gulp-data');
-var prettify = require('gulp-prettify');
-var config = require('../config').templates;
+var
+  gulp = require('gulp'),
+  swig = require('gulp-swig'),
+  data = require('gulp-data'),
+  prettify = require('gulp-prettify'),
+  config = require('../config').templates
+  ;
 
 
 var getJsonData = function(file) {

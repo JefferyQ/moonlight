@@ -1,10 +1,12 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var sourcemaps = require('gulp-sourcemaps');
-var minify = require('gulp-minify-css');
-var handleErrors = require('../util/handleErrors');
-var config = require('../config').sass;
+var
+  gulp = require('gulp'),
+  sass = require('gulp-sass'),
+  concat = require('gulp-concat'),
+  sourcemaps = require('gulp-sourcemaps'),
+  minify = require('gulp-minify-css'),
+  handleErrors = require('../util/handleErrors'),
+  config = require('../config').sass
+  ;
 
 
 gulp.task('sass', function() {

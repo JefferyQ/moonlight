@@ -1,5 +1,7 @@
-var gulp = require('gulp');
-var buildMode = require('../config').buildMode;
+var
+  gulp = require('gulp'),
+  buildMode = require('../config').buildMode
+  ;
 
 
 if(buildMode.dist) {

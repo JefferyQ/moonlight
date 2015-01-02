@@ -6,13 +6,15 @@
    See browserify.bundleConfigs in gulp/config.js
 */
 
-var browserify = require('browserify');
-var watchify = require('watchify');
-var bundleLogger = require('../util/bundleLogger');
-var gulp = require('gulp');
-var handleErrors = require('../util/handleErrors');
-var source = require('vinyl-source-stream');
-var config = require('../config').browserify;
+var
+  browserify = require('browserify'),
+  watchify = require('watchify'),
+  bundleLogger = require('../util/bundleLogger'),
+  gulp = require('gulp'),
+  handleErrors = require('../util/handleErrors'),
+  source = require('vinyl-source-stream'),
+  config = require('../config').browserify
+  ;
 
 
 gulp.task('browserify', function(callback) {
