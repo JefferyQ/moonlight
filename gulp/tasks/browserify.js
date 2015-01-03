@@ -9,6 +9,8 @@
 var
   browserify = require('browserify'),
   watchify = require('watchify'),
+  exorcist = require('exorcist'),
+  transform = require('vinyl-transform'),
   bundleLogger = require('../util/bundleLogger'),
   gulp = require('gulp'),
   handleErrors = require('../util/handleErrors'),
@@ -45,7 +47,14 @@ gulp.task('browserify', function(callback) {
         // Use vinyl-source-stream to make the
         // stream gulp compatible. Specifiy the
         // desired output filename here.
-        .pipe(source(bundleConfig.outputName))
+        .pipe(source(bundleConfig.outputNameMinified))
+        // Use external map file
+        .pipe(transform(function () {
+          return exorcist(
+            bundleConfig.dest + '/' +
+            bundleConfig.outputNameMinified + '.map'
+          );
+        }))
         // Specify the output destination
         .pipe(gulp.dest(bundleConfig.dest))
         .on('end', reportFinished);
