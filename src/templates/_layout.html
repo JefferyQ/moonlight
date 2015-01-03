@@ -4,12 +4,16 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <link rel="stylesheet" href="assets/css/moonlight.css">
+  <link rel="stylesheet" href="assets/css/moonlight-vendors.min.css">
+  <link rel="stylesheet" href="assets/css/moonlight.min.css">
 </head>
 <body>
   {% include "./_header.html" %}
   {% include "./_nav.html" %}
   {% block content %}Default Content{% endblock %}
   {% include "./_footer.html" %}
+
+  <script src="assets/js/moonlight-vendors.min.js"></script>
+  <script src="assets/js/moonlight.min.js"></script>
 </body>
 </html>
