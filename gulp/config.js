@@ -20,7 +20,8 @@ module.exports = {
     bundleConfigs: [{
       entries: src + '/js/module.js',
       dest: assetsDest + '/js',
-      outputName: 'moonlight.js'
+      outputName: 'moonlight.js',
+      outputNameMinified: 'moonlight.min.js'
     }]
   },
   browserSync: {
@@ -34,19 +35,13 @@ module.exports = {
       '!' + dest + '/**.map'
     ]
   },
-  icons: {
-    src: [
-      './node_modules/font-awesome/fonts/*',
-      './node_modules/bootstrap-sass/assets/fonts/bootstrap/*'
-    ],
-    dest: assetsDest + '/fonts'
-  },
   sass: {
     path: sassPath,
     src: [
       sassPath + '/**/*.scss'
     ],
     outputName: 'moonlight.css',
+    outputNameMinified: 'moonlight.min.css',
     dest: assetsDest + '/css'
   },
   templates: {
@@ -58,7 +53,29 @@ module.exports = {
     dest: dest
   },
   vendors: {
-    outputName: 'moonlight-vendors.js',
-    dest: assetsDest
+    css: {
+      src: [
+        './node_modules/bootstrap/dist/css/bootstrap.css',
+        './node_modules/font-awesome/css/font-awesome.css'
+      ],
+      outputName: 'moonlight-vendors.css',
+      outputNameMinified: 'moonlight-vendors.min.css',
+      dest: assetsDest + '/css'
+    },
+    js: {
+      src: [
+        './node_modules/bootstrap/dist/js/bootstrap.js'
+      ],
+      outputName: 'moonlight-vendors.js',
+      outputNameMinified: 'moonlight-vendors.min.js',
+      dest: assetsDest + '/js'
+    },
+    fonts: {
+      src: [
+        './node_modules/bootstrap/dist/fonts/*',
+        './node_modules/font-awesome/fonts/*'
+      ],
+      dest: assetsDest + '/fonts'
+    }
   }
 };

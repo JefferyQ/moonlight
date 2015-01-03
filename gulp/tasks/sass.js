@@ -15,7 +15,7 @@ gulp.task('sass', function() {
     .pipe(sass()
       .on('error', handleErrors)
     )
-    .pipe(concat(config.outputName))
+    .pipe(concat(config.outputNameMinified))
     .pipe(minify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(config.dest));

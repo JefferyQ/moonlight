@@ -3,6 +3,7 @@ var
   concat = require('gulp-concat'),
   sourcemaps = require('gulp-sourcemaps'),
   uglify = require('gulp-uglify'),
+  minify = require('gulp-minify-css'),
   config = require('../config').vendors,
   buildMode = require('../config').buildMode,
   dist = require('../config').dist,
@@ -19,10 +20,18 @@ for(var key in PACKAGE.browser) {
 
 
 gulp.task('vendors', function() {
-  gulp.src(src)
+  gulp.src(config.css.src)
     .pipe(sourcemaps.init())
-    .pipe(concat(config.outputName))
+    .pipe(concat(config.css.outputNameMinified))
+    .pipe(minify())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(config.css.dest))
+  gulp.src(config.js.src)
+    .pipe(sourcemaps.init())
+    .pipe(concat(config.js.outputNameMinified))
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(config.dest))
+    .pipe(gulp.dest(config.js.dest))
+  gulp.src(config.fonts.src)
+    .pipe(gulp.dest(config.fonts.dest))
 });
