@@ -2,3 +2,67 @@
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 
 // Colors
+
+$color-primary: $brand-primary;
+$color-success: $brand-success;
+$color-info:  $brand-info;
+$color-warning: $brand-warning;
+$color-danger:  $brand-danger;
+$color-alert: #10cfbd;
+$color-system: #6d5cae;
+$color-dark: #3a3a3a;
+$color-light: #ececec;
+
+$white: #ffffff;
+$black: #000000;
+
+$muted-percent: 15%;
+$hover-percent: 15%;
+$light-percent: 5%;
+$lighter-percent: 10%;
+$dark-percent: 5%;
+$darker-percent: 10%;
+
+// Scaffolding
+
+$body-bg: #ffffff !default;
+$text-color: $color-dark;
+$text-muted: lighten($text-color, $muted-percent);
+$link-color: $color-primary;
+$link-hover-color: darken($link-color, $hover-percent);
+$link-hover-decoration: underline !default;
+
+// Typo
+
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-size-base: 14px !default;
+$font-size-large: ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small: ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1: floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2: floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3: ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4: ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5: $font-size-base !default;
+$font-size-h6: ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$line-height-base: 1.428571429 !default; // 20/14
+$line-height-computed: floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+$headings-font-family: inherit !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.1 !default;
+$headings-color: inherit !default;
+
+// Boxes
+
+$box-tablet:             (720px + $grid-gutter-width) !default;
+$box-sm:                 $box-tablet !default;
+$box-desktop:            (940px + $grid-gutter-width) !default;
+$box-md:                 $box-desktop !default;
+$box-large-desktop:      (1140px + $grid-gutter-width) !default;
+$box-lg:                 $box-large-desktop !default;
