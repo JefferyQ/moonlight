@@ -1,0 +1,12 @@
+// Layout Nav
+
+aside#sidebar {
+  width: $sidebar-width;
+  background-color: $color-light;
+  position: fixed;
+  z-index: $sidebar-zindex;
+  top: 0;
+  bottom: 0;
+  right: auto;
+  overflow: hidden;
+}
