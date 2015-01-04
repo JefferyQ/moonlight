@@ -1,3 +1,4 @@
+// Config
 
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 
@@ -31,6 +32,17 @@ $text-muted: lighten($text-color, $muted-percent);
 $link-color: $color-primary;
 $link-hover-color: darken($link-color, $hover-percent);
 $link-hover-decoration: underline !default;
+
+$zindex-100: 100;
+$zindex-200: 200;
+$zindex-300: 300;
+$zindex-400: 400;
+$zindex-500: 500;
+$zindex-600: 600;
+$zindex-700: 700;
+$zindex-800: 800;
+$zindex-900: 900;
+$zindex-1000: 1000;
 
 // Typo
 
@@ -66,3 +78,13 @@ $box-desktop:            (940px + $grid-gutter-width) !default;
 $box-md:                 $box-desktop !default;
 $box-large-desktop:      (1140px + $grid-gutter-width) !default;
 $box-lg:                 $box-large-desktop !default;
+
+// Layout
+
+$header-height: 50px;
+
+$sidebar-width: 220px;
+$sidebar-collapsed-width: 60px;
+$sidebar-zindex: $zindex-1000;
+
+$footer-height: 50px;
