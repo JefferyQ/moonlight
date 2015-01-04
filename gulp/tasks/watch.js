@@ -10,6 +10,6 @@ var
 
 
 gulp.task('watch', ['setWatch', 'browserSync'], function() {
-  gulp.watch(config.templates.src, ['templates']);
+  gulp.watch(config.templates.path + '/**/*.html', ['templates']);
   gulp.watch(config.sass.src, ['sass']);
 });
