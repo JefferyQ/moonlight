@@ -23,7 +23,7 @@ gulp.task('templates', function () {
     defaults: {
       cache: false,
       locals: {
-        nav: require('../../src/templates/_nav.json')
+        sidebar: require('../../src/templates/_sidebar.json')
       }
     }
   }
