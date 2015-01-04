@@ -2,7 +2,8 @@
 
 aside#sidebar {
   width: $sidebar-width;
-  background-color: $color-light;
+  color: $sidebar-text-color;
+  background-color: $sidebar-background-color;
   position: fixed;
   z-index: $sidebar-zindex;
   top: 0;
