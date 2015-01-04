@@ -1,0 +1,41 @@
+
+@mixin text-shades($name, $color) {
+  .text-#{$name} {
+    color: $color;
+  }
+  .text-#{$name}-light {
+    color: lighten($color, $light-percent);
+  }
+  .text-#{$name}-lighter {
+    color: lighten($color, $lighter-percent);
+  }
+  .text-#{$name}-dark {
+    color: darken($color, $dark-percent);
+  }
+  .text-#{$name}-darker {
+    color: darken($color, $darker-percent);
+  }
+}
+
+@mixin bg-shades($name, $color) {
+  .bg-#{$name} {
+    color: $white;
+    background-color: $color;
+  }
+  .bg-#{$name}-light {
+    color: $white;
+    background-color: lighten($color, $light-percent);
+  }
+  .bg-#{$name}-lighter {
+    color: $white;
+    background-color: lighten($color, $lighter-percent);
+  }
+  .bg-#{$name}-dark {
+    color: $white;
+    background-color: darken($color, $dark-percent);
+  }
+  .bg-#{$name}-darker {
+    color: $white;
+    background-color: darken($color, $darker-percent);
+  }
+}
