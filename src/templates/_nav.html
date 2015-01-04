@@ -1,8 +1,0 @@
-<div>NAV</div>
-{% if nav %}<ul>{% endif %}
-{% for item in nav %}
-  <li{% if nav_id && nav_id == item.id %} class="selected"{% endif %}>
-    {{ loop.index }}. <a href="{{ item.url }}">{{ item.name }}</a>
-  </li>
-{% endfor %}
-{% if nav %}</ul>{% endif %}

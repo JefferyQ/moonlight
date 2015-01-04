@@ -1,0 +1,13 @@
+<aside id="sidebar">
+  {% if sidebar.nav %}<ul>{% endif %}
+  <nav class="nav">
+    <div>NAV</div>
+    <ul>
+      {% for item in sidebar.nav %}
+      <li{% if nav_id && nav_id == item.id %} class="selected"{% endif %}>
+        {{ loop.index }}. <a href="{{ item.url }}">{{ item.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</aside>

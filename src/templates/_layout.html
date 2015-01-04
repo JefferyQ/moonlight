@@ -8,12 +8,16 @@
   <link rel="stylesheet" href="assets/css/moonlight.min.css">
 </head>
 <body>
-  <div class="moonlight">
-  {% include "./_header.html" %}
-  {% include "./_nav.html" %}
-  {% block content %}Default Content{% endblock %}
-  {% include "./_footer.html" %}
-  </div>
+  <section class="moonlight">
+    {% include "./_header.html" %}
+    {% include "./_sidebar.html" %}
+    {% block content %}
+    <section id="main">
+      <h3>Default Content</h3>
+    </section>
+    {% endblock %}
+    {% include "./_footer.html" %}
+  </section>
   <script src="assets/js/moonlight-vendors.min.js"></script>
   <script src="assets/js/moonlight.min.js"></script>
 </body>
