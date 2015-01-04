@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="assets/css/moonlight.min.css">
 </head>
 <body>
+  <div class="moonlight">
   {% include "./_header.html" %}
   {% include "./_nav.html" %}
   {% block content %}Default Content{% endblock %}
   {% include "./_footer.html" %}
-
+  </div>
   <script src="assets/js/moonlight-vendors.min.js"></script>
   <script src="assets/js/moonlight.min.js"></script>
 </body>
