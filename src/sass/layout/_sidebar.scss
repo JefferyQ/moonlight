@@ -10,4 +10,43 @@ aside#sidebar {
   bottom: 0;
   right: auto;
   overflow: hidden;
+  header {
+    height: $header-height;
+    background-color: darken($sidebar-background-color, $dark-percent);
+    padding: $box-padding;
+  }
+  nav {
+    .nav {
+      &.nav-sub {
+        margin-left: $box-padding-sides;
+        display: none;
+      }
+      > li {
+        &.active {
+          background-color: darken($sidebar-background-color, $dark-percent);
+          > a {
+            color: $white;
+          }
+          .nav-sub {
+            display: block;
+          }
+        }
+        &.line {
+          @include separator($bg-color: darken($sidebar-background-color, $dark-percent));
+        }
+        > a {
+          color: $sidebar-text-color;
+          &:hover {
+            color: $white;
+            background-color: darken($sidebar-background-color, $dark-percent);
+          }
+        }
+      }
+    }
+  }
+  hr.line {
+    margin: 0;
+    border: none;
+    @include separator($bg-color: darken($sidebar-background-color, $dark-percent));
+  }
 }

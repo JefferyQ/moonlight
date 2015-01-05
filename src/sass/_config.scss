@@ -6,9 +6,9 @@
 
 $color-primary: $brand-primary;
 $color-success: $brand-success;
-$color-info:  $brand-info;
+$color-info: $brand-info;
 $color-warning: $brand-warning;
-$color-danger:  $brand-danger;
+$color-danger: $brand-danger;
 $color-alert: #10cfbd;
 $color-system: #6d5cae;
 $color-dark: #3a3a3a;
@@ -72,12 +72,16 @@ $headings-color: inherit !default;
 
 // Boxes
 
-$box-tablet:             (720px + $grid-gutter-width) !default;
-$box-sm:                 $box-tablet !default;
-$box-desktop:            (940px + $grid-gutter-width) !default;
-$box-md:                 $box-desktop !default;
-$box-large-desktop:      (1140px + $grid-gutter-width) !default;
-$box-lg:                 $box-large-desktop !default;
+$box-tablet: (720px + $grid-gutter-width) !default;
+$box-sm: $box-tablet !default;
+$box-desktop: (940px + $grid-gutter-width) !default;
+$box-md: $box-desktop !default;
+$box-large-desktop: (1140px + $grid-gutter-width) !default;
+$box-lg: $box-large-desktop !default;
+
+$box-padding-ends: 10px;
+$box-padding-sides: 15px;
+$box-padding: $box-padding-ends $box-padding-sides;
 
 // Layout
 
