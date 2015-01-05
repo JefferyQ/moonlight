@@ -10,6 +10,7 @@ aside#sidebar {
   bottom: 0;
   right: auto;
   overflow: hidden;
+  font-weight: 300;
   header {
     height: $header-height;
     background-color: darken($sidebar-background-color, $dark-percent);
