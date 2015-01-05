@@ -8,7 +8,19 @@
     {
       "id": "item-2",
       "name": "Item #2",
-      "url": "#"
+      "url": "#",
+      "nav": [
+        {
+          "id": "sub-item-1",
+          "name": "Sub-item #1",
+          "url": "#"
+        },
+        {
+          "id": "sub-item-2",
+          "name": "Sub-item #2",
+          "url": "#"
+        }
+      ]
     },
     {
       "id": "item-3",
@@ -18,7 +30,19 @@
     {
       "id": "item-4",
       "name": "Item #4",
-      "url": "#"
+      "url": "#",
+      "nav": [
+        {
+          "id": "sub-item-1",
+          "name": "Sub-item #1",
+          "url": "#"
+        },
+        {
+          "id": "sub-item-2",
+          "name": "Sub-item #2",
+          "url": "#"
+        }
+      ]
     }
   ]
 }
