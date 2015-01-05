@@ -18,7 +18,7 @@ aside#sidebar {
   nav {
     .nav {
       &.nav-sub {
-        margin-left: $box-padding-sides;
+        margin-left: 20px;
         display: none;
       }
       > li {
@@ -51,6 +51,9 @@ aside#sidebar {
           }
           .item-opened {
             display: none;
+          }
+          > i {
+            margin-right: 5px;
           }
         }
       }

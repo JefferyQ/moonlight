@@ -31,6 +31,7 @@
       "id": "item-4",
       "name": "Item #4",
       "url": "#",
+      "label": "10",
       "nav": [
         {
           "id": "sub-item-1",

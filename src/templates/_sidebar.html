@@ -14,13 +14,19 @@
             <i class="fa fa-fw fa-angle-down item-opened"></i>
           </span>
           {% endif %}
-          {{ item.name }}
+          {% if item.label %}
+          <b class="label bg-info pull-right">{{ item.label }}</b>
+          {% endif %}
+          <i class="fa fa-cog{% if loop.first %} text-primary{% endif %}"></i>
+          <span>{{ item.name }}</span>
         </a>
         {% if item.nav %}
         <ul class="nav nav-sub">
           {% for item in item.nav %}
           <li{% if nav_id && nav_id == item.id %} class="active"{% endif %}>
-            <a href="{{ item.url }}">{{ item.name }}</a>
+            <a href="{{ item.url }}">
+              <span>{{ item.name }}</span>
+            </a>
           </li>
           {% endfor %}
         </ul>
