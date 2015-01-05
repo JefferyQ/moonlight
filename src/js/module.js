@@ -1,1 +1,6 @@
-'use strict';
+
+// Imports
+var sidebar = require('./sidebar');
+
+//
+sidebar();
