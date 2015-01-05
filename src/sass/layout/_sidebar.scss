@@ -26,6 +26,12 @@ aside#sidebar {
           background-color: darken($sidebar-background-color, $dark-percent);
           > a {
             color: $white;
+            .item-closed {
+              display: none;
+            }
+            .item-opened {
+              display: block;
+            }
           }
           .nav-sub {
             display: block;
@@ -39,6 +45,12 @@ aside#sidebar {
           &:hover {
             color: $white;
             background-color: darken($sidebar-background-color, $dark-percent);
+          }
+          .item-closed {
+            display: block;
+          }
+          .item-opened {
+            display: none;
           }
         }
       }

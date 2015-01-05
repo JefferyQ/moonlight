@@ -7,7 +7,15 @@
     <ul class="nav">
       {% for item in sidebar.nav %}
       <li class="root-item{% if nav_id && nav_id == item.id %} active{% endif %}">
-        <a href="{{ item.url }}">{{ item.name }}</a>
+        <a href="{{ item.url }}">
+          {% if item.nav %}
+          <span class="pull-right text-muted">
+            <i class="fa fa-fw fa-angle-right item-closed"></i>
+            <i class="fa fa-fw fa-angle-down item-opened"></i>
+          </span>
+          {% endif %}
+          {{ item.name }}
+        </a>
         {% if item.nav %}
         <ul class="nav nav-sub">
           {% for item in item.nav %}
