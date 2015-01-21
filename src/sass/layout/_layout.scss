@@ -19,6 +19,14 @@
       width: $sidebar-collapsed-width;
     }
   }
+  &.sidebar-hidden {
+    header#header, section#main, footer#footer {
+      margin-left: $sidebar-hidden-width;
+    }
+    aside#sidebar {
+      width: $sidebar-hidden-width;
+    }
+  }
 }
 
 .box {
