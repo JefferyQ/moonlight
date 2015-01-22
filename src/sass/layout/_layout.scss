@@ -9,11 +9,24 @@
       position: fixed;
       top: 0;
       left: 0;
+      width: 100%;
+      margin-left: 0;
+      padding-left: $sidebar-width;
+      z-index: $zindex-1000;
+    }
+    section#main {
+      margin-top: 50px;
     }
   }
   &.sidebar-collapsed {
     header#header, section#main, footer#footer {
       margin-left: $sidebar-collapsed-width;
+    }
+    &.header-fixed {
+      header#header {
+        margin-left: 0;
+        padding-left: $sidebar-collapsed-width;
+      }
     }
     aside#sidebar {
       width: $sidebar-collapsed-width;
@@ -22,6 +35,12 @@
   &.sidebar-hidden {
     header#header, section#main, footer#footer {
       margin-left: $sidebar-hidden-width;
+    }
+    &.header-fixed {
+      header#header {
+        margin-left: 0;
+        padding-left: $sidebar-hidden-width;
+      }
     }
     aside#sidebar {
       width: $sidebar-hidden-width;

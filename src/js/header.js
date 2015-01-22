@@ -19,6 +19,13 @@ var header = function () {
       $moonlight.addClass('sidebar-hidden');
     };
   });
+  $header.on('click', '.header-fixed', function (e) {
+    if ($moonlight.hasClass('header-fixed')) {
+      $moonlight.removeClass('header-fixed');
+    } else {
+      $moonlight.addClass('header-fixed');
+    };
+  });
 }
 
 module.exports = header;
