@@ -14,7 +14,12 @@ aside#sidebar {
   header {
     height: $header-height;
     background-color: darken($sidebar-background-color, $dark-percent);
-    padding: $box-padding;
+    padding: $box-padding-sides;
+    .sidebar-brand {
+      float: left;
+      font-size: 18px;
+      line-height: 20px;
+    }
   }
   nav {
     .nav {
