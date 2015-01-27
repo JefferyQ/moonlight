@@ -15,10 +15,14 @@ module.exports = {
   browserify: {
     // Enable source maps
     debug: true,
+    // bundle or not external packages
+    bundleExternal: false,
+    //
+    extensions: [],
     // A separate bundle will be generated for each
     // bundle config in the list below
     bundleConfigs: [{
-      entries: src + '/js/module.js',
+      entries: src + '/js/main.js',
       dest: assetsDest + '/js',
       outputName: 'moonlight.js',
       outputNameMinified: 'moonlight.min.js'
@@ -58,17 +62,21 @@ module.exports = {
         './node_modules/bootstrap/dist/css/bootstrap.css',
         './node_modules/font-awesome/css/font-awesome.css'
       ],
-      outputName: 'moonlight-vendors.css',
-      outputNameMinified: 'moonlight-vendors.min.css',
+      map: [
+        './node_modules/bootstrap/dist/css/bootstrap.css.map'
+      ],
+      outputName: 'vendors.css',
+      outputNameMinified: 'vendors.min.css',
       dest: assetsDest + '/css'
     },
     js: {
-      src: [
-        './node_modules/jquery/dist/jquery.js',
-        './node_modules/bootstrap/dist/js/bootstrap.js'
+      lib: [
+        'jquery',
+        'bootstrap',
+        'lodash'
       ],
-      outputName: 'moonlight-vendors.js',
-      outputNameMinified: 'moonlight-vendors.min.js',
+      outputName: 'vendors.js',
+      outputNameMinified: 'vendors.min.js',
       dest: assetsDest + '/js'
     },
     fonts: {
