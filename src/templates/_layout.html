@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <link rel="stylesheet" href="assets/css/moonlight-vendors.min.css">
-  <link rel="stylesheet" href="assets/css/moonlight.min.css">
+  {% for value in css %}
+  <link rel="stylesheet" href="assets/css/{{ value }}">
+  {% endfor %}
 </head>
 <body>
   <section class="moonlight">
@@ -18,7 +19,8 @@
     {% endblock %}
     {% include "./_footer.html" %}
   </section>
-  <script src="assets/js/moonlight-vendors.min.js"></script>
-  <script src="assets/js/moonlight.min.js"></script>
+  {% for value in js %}
+  <script src="assets/js/{{ value }}"></script>
+  {% endfor %}
 </body>
 </html>
