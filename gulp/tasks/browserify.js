@@ -9,13 +9,16 @@
 var
   browserify = require('browserify'),
   watchify = require('watchify'),
-  exorcist = require('exorcist'),
-  transform = require('vinyl-transform'),
-  bundleLogger = require('../util/bundleLogger'),
   gulp = require('gulp'),
-  handleErrors = require('../util/handleErrors'),
+  uglify = require('gulp-uglify'),
+  streamify = require('gulp-streamify'),
+  util = require('gulp-util'),
+  exorcist = require('exorcist'),
   source = require('vinyl-source-stream'),
-  config = require('../config').browserify
+  bundleLogger = require('../util/bundleLogger'),
+  handleErrors = require('../util/handleErrors'),
+  config = require('../config').browserify,
+  buildMode = require('../config').buildMode
   ;
 
 
@@ -25,6 +28,9 @@ gulp.task('browserify', function(callback) {
 
   var browserifyThis = function(bundleConfig) {
 
+    var jsName = buildMode.dist === false ?
+        bundleConfig.outputName : bundleConfig.outputNameMinified;
+
     var bundler = browserify({
       // Required watchify args
       cache: {}, packageCache: {}, fullPaths: false,
@@ -33,29 +39,28 @@ gulp.task('browserify', function(callback) {
       // Add file extentions to make optional in your requires
       extensions: config.extensions,
       // Enable source maps!
-      debug: config.debug
+      debug: config.debug,
+      //
+      bundleExternal: config.bundleExternal
     });
 
     var bundle = function() {
       // Log when bundling starts
-      bundleLogger.start(bundleConfig.outputName);
+      bundleLogger.start(jsName);
 
       return bundler
         .bundle()
         // Report compile errors
         .on('error', handleErrors)
-        // Use vinyl-source-stream to make the
-        // stream gulp compatible. Specifiy the
-        // desired output filename here.
-        .pipe(source(bundleConfig.outputNameMinified))
-        // Use external map file
-        .pipe(transform(function () {
-          return exorcist(
-            bundleConfig.dest + '/' +
-            bundleConfig.outputNameMinified + '.map'
-          );
-        }))
-        // Specify the output destination
+        .pipe(buildMode.dist === false ?
+          exorcist(
+            bundleConfig.dest + '/' + jsName + '.map'
+          ) : util.noop()
+        )
+        .pipe(source(jsName))
+        .pipe(buildMode.dist === true ?
+          streamify(uglify()) : util.noop()
+        )
         .pipe(gulp.dest(bundleConfig.dest))
         .on('end', reportFinished);
     };
