@@ -60,7 +60,8 @@ module.exports = {
     css: {
       src: [
         './node_modules/bootstrap/dist/css/bootstrap.css',
-        './node_modules/font-awesome/css/font-awesome.css'
+        './node_modules/font-awesome/css/font-awesome.css',
+        './node_modules/animate.css/animate.css'
       ],
       map: [
         './node_modules/bootstrap/dist/css/bootstrap.css.map'
