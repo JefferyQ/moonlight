@@ -1,9 +1,12 @@
 // Layout
 
 .moonlight {
-  height: 100%;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
   margin: 0;
   padding: 0;
+  position: relative;
   &.header-fixed {
     header#header {
       position: fixed;
@@ -15,7 +18,7 @@
       z-index: $zindex-1000;
     }
     section#main {
-      margin-top: 50px;
+      margin-top: $header-height;
     }
   }
   &.sidebar-collapsed {

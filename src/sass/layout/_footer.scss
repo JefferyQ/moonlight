@@ -1,7 +1,19 @@
 // Layout Footer
 
 footer#footer {
-  position: relative;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: $zindex-1000;
   height: $footer-height;
   margin-left: $sidebar-width;
+  background-color: $footer-background-color;
+  border-top: $color-light 1px solid;
+  p {
+    font-size: 12px;
+    line-height: 20px;
+    padding: ($footer-height - 20) / 2 $box-padding-sides;
+    margin: 0;
+  }
 }

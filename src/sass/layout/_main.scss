@@ -4,4 +4,5 @@ section#main {
   position: relative;
   display: block;
   margin-left: $sidebar-width;
+  padding: $box-padding-ends $box-padding-sides $box-padding-ends+$footer-height;
 }
