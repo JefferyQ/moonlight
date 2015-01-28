@@ -6,4 +6,5 @@ header#header {
   height: $header-height;
   margin-left: $sidebar-width;
   background-color: $header-background-color;
+  border-bottom: $color-light 1px solid;
 }
