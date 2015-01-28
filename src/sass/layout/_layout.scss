@@ -30,6 +30,9 @@
     }
     aside#sidebar {
       width: $sidebar-collapsed-width;
+      span, b {
+        display: none;
+      }
     }
   }
   &.sidebar-hidden {
