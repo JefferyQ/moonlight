@@ -20,6 +20,9 @@ aside#sidebar {
       font-size: 18px;
       line-height: 20px;
     }
+    .icon {
+      margin-right: 10px;
+    }
   }
   nav {
     .nav {
@@ -28,6 +31,11 @@ aside#sidebar {
         display: none;
       }
       > li {
+        &.root-item {
+          .nav-sub {
+            margin-left: 30px;
+          }
+        }
         &.active {
           background-color: darken($sidebar-background-color, $dark-percent);
           > a {
@@ -60,6 +68,9 @@ aside#sidebar {
           }
           > i {
             margin-right: 5px;
+            &.icon {
+              margin-right: 15px;
+            }
           }
         }
       }
