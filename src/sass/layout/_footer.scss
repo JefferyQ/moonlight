@@ -16,4 +16,7 @@ footer#footer {
     padding: ($footer-height - 20) / 2 $box-padding-sides;
     margin: 0;
   }
+  .navbar-right {
+    margin-right: 0;
+  }
 }

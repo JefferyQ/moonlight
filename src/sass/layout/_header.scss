@@ -7,4 +7,7 @@ header#header {
   margin-left: $sidebar-width;
   background-color: $header-background-color;
   border-bottom: $color-light 1px solid;
+  .navbar-right {
+    margin-right: 0;
+  }
 }
