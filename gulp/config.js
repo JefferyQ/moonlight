@@ -71,10 +71,11 @@ module.exports = {
       dest: assetsDest + '/css'
     },
     js: {
-      lib: [
-        'jquery',
-        'bootstrap',
-        'lodash'
+      externals: [
+        {require: 'jquery'},
+        {require: 'bootstrap'},
+        {require: 'lodash'},
+        {require: src + '/vendors/pace.js', expose: 'pace'}
       ],
       outputName: 'vendors.js',
       outputNameMinified: 'vendors.min.js',
