@@ -74,7 +74,7 @@ gulp.task('browserify', function(callback) {
 
     var reportFinished = function() {
       // Log when bundling completes
-      bundleLogger.end(bundleConfig.outputName)
+      bundleLogger.end(jsName)
 
       if(bundleQueue) {
         bundleQueue--;
