@@ -10,6 +10,7 @@ var
   bundleLogger = require('../util/bundleLogger'),
   handleErrors = require('../util/handleErrors'),
   config = require('../config').vendors,
+  externals = config.js.externals,
   buildMode = require('../config').buildMode
   ;
 
@@ -36,9 +37,18 @@ gulp.task('vendors', function () {
   var jsName = buildMode.dist === false ?
     config.js.outputName : config.js.outputNameMinified;
   var bundler = browserify({debug: false});
-  config.js.lib.forEach(function (lib) {
-    bundler.require(lib);
-  });
+  if (externals) {
+    externals.forEach(function (external) {
+      if (external.expose) {
+        bundler.require(
+          external.require,
+          {expose: external.expose}
+        );
+      } else {
+        bundler.require(external.require);
+      }
+    });
+  }
   bundleLogger.start(jsName);
   bundler
     .bundle()
