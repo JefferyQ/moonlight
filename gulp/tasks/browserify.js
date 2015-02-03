@@ -18,6 +18,7 @@ var
   bundleLogger = require('../util/bundleLogger'),
   handleErrors = require('../util/handleErrors'),
   config = require('../config').browserify,
+  externals = require('../config').vendors.js.externals,
   buildMode = require('../config').buildMode
   ;
 
@@ -43,6 +44,12 @@ gulp.task('browserify', function(callback) {
       //
       bundleExternal: config.bundleExternal
     });
+
+    if (externals) {
+      externals.forEach(function (external) {
+        if (external.expose) bundler.external(external.expose);
+      });
+    }
 
     var bundle = function() {
       // Log when bundling starts
